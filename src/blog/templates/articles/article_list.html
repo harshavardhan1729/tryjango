@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+{% block content %}
+
+{%for instance in object_list %}
+<p>{{instance.id}}-<a href='{{instance.get_absolute_url}}'>{{instance.title}}</a></p>
+<p><a href="http://127.0.0.1:8000/blog/{{instance.id}}/update" value="update">update</a></p>
+<p><a href="http://127.0.0.1:8000/blog/{{instance.id}}/delete" value="delete">delete</a></p><br>
+{%endfor %}
+<p><b><a href="http://127.0.0.1:8000/blog/create" value='create'>create a new article</a></b> </p>
+{%endblock%}
